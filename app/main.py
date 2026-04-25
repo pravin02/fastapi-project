@@ -1,11 +1,31 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+from router import albums
+
+try:
+    app = FastAPI(title="Albums DB", version="1.0.0")
+
+    @app.get("/heath")
+    def health():
+        return {"status": "OK"}
+
+    app.include_router(albums.router, prefix="/api/v1", tags=["albums"])
+except Exception as e:
+    print(f"Application at startup. Exception: {e}")
 
 
-@app.get("/")
-def home() -> str:
-    return "Home"
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # To run fastapi server use below commands
