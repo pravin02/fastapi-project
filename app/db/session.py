@@ -10,8 +10,9 @@ engine = create_engine(
 
 Base = declarative_base()
 
-db_session = sessionmaker(bind=engine, expire_on_commit=False)
+session = sessionmaker(bind=engine, expire_on_commit=False)
 
 
 def get_db_session() -> Session:
-    return db_session()
+    """Return the database session"""
+    return session()

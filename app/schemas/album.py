@@ -3,7 +3,7 @@ from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
 
-
+"""Album entity"""
 class Album(Base):
     __tablename__ = "Album"
     albumId = Column(Integer, primary_key=True)
@@ -18,4 +18,3 @@ class Album(Base):
     def __call__(self, albumId: int, title: str):
         self.albumId = albumId
         self.title = title
-        

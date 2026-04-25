@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
-from router import albums
+from router import albums, artists
+
 
 try:
     app = FastAPI(title="Albums DB", version="1.0.0")
@@ -10,29 +11,16 @@ try:
         return {"status": "OK"}
 
     app.include_router(albums.router, prefix="/api/v1", tags=["albums"])
+    app.include_router(artists.router, prefix="/api/v1", tags=["artists"])
 except Exception as e:
     print(f"Application at startup. Exception: {e}")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # To run fastapi server use below commands
 # dev - parameter is used to run application in development mode
 # run - parameter is used to run application in production mode
-#fastapi dev main.py
-#fastapi run main.py
+# fastapi dev main.py
+# fastapi run main.py
 
 
 # def main():
