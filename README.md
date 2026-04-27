@@ -21,3 +21,8 @@ Above command run application in developer mode default on 8000 port number.
 
 Above command run application in production mode default on 8000 port number.
 
+A sample database is used from DBeaver sqlite for this example. you can find database file inside below directory.
+
+`app/database/chinook.db`
+
+
